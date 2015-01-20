@@ -2,6 +2,12 @@
 
 An Node.js client for interacting with Drupal 7 Services 3.11.
 
+## Installation
+
+```sh
+npm install --save drupal-services-api
+```
+
 ## Usage
 
 You need to login before using any methods that require it.
