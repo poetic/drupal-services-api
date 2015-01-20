@@ -1,4 +1,4 @@
-# Drupal 7 Services API
+# Drupal 7 Services API [![Build Status](https://travis-ci.org/poetic/drupal-services-api.svg?branch=master)](https://travis-ci.org/poetic/drupal-services-api)
 
 An Node.js client for interacting with Drupal 7 Services 3.11.
 
