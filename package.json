@@ -1,0 +1,24 @@
+{
+  "name": "drupal-services-api",
+  "version": "1.0.0",
+  "description": "An API Client for interacting with Drupal Services",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/poetic/drupal-services-api.git"
+  },
+  "keywords": [
+    "drupal",
+    "services",
+    "rest"
+  ],
+  "author": "Jake Craige <jake@poeticsystems.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poetic/drupal-services-api/issues"
+  },
+  "homepage": "https://github.com/poetic/drupal-services-api"
+}
