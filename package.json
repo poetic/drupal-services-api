@@ -1,10 +1,11 @@
 {
   "name": "drupal-services-api",
-  "version": "1.0.0",
-  "description": "An API Client for interacting with Drupal Services",
+  "version": "0.1.0",
+  "description": "An Node.js client for interacting with Drupal 7 Services",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm run --silent test-ci | node_modules/tap-spec/bin/cmd.js",
+    "test-ci": "node_modules/jshint/bin/jshint . && node_modules/tape/bin/tape test/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,15 @@
   "bugs": {
     "url": "https://github.com/poetic/drupal-services-api/issues"
   },
-  "homepage": "https://github.com/poetic/drupal-services-api"
+  "homepage": "https://github.com/poetic/drupal-services-api",
+  "dependencies": {
+    "lodash-node": "^2.4.1",
+    "request-promise": "^0.3.3"
+  },
+  "devDependencies": {
+    "jshint": "^2.5.11",
+    "nock": "^0.57.0",
+    "tap-spec": "2.2.0",
+    "tape": "^3.4.0"
+  }
 }

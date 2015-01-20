@@ -1,0 +1,100 @@
+{
+  "user": {
+    "login": {
+      "sessid": "VF1HOx_fJ7KSQGk5DjdhFbtkYKLPpg8Xt9KS5dBRTGk",
+      "session_name": "SESS8bf5276dc5210b1f064246f41e6c9872",
+      "token": "AqZkReBxWqVDuOpBZrIo89AC5_QY_lqdA-Gtc-fTq-0",
+      "user": {
+        "uid": "2",
+        "name": "user",
+        "mail": "user@example.com",
+        "theme": "",
+        "signature": "",
+        "signature_format": "full_html",
+        "created": "1421698234",
+        "access": "1421765861",
+        "login": 1421766034,
+        "status": "1",
+        "timezone": "UTC",
+        "language": "",
+        "picture": "0",
+        "init": "user@example.com",
+        "uuid": "2aafe13a-3593-4f06-a0e9-0e315cb3c989",
+        "roles": {
+          "2": "authenticated user",
+          "3": "administrator"
+        }
+      }
+    },
+    "logout": [true]
+  },
+  "node": {
+    "index": [{
+      "nid": "3",
+      "vid": "3",
+      "type": "article",
+      "language": "und",
+      "title": "Example",
+      "uid": "1",
+      "status": "1",
+      "created": "1421699406",
+      "changed": "1421699406",
+      "comment": "0",
+      "promote": "1",
+      "sticky": "0",
+      "tnid": "0",
+      "translate": "0",
+      "uuid": "3fd93b27-9ba6-407c-8c0e-e64e8b37644c",
+      "uri": "http://example.com/api/node/3"
+    }],
+    "indexQuery": [{
+      "nid": "10",
+      "vid": "10",
+      "type": "article",
+      "language": "und",
+      "title": "something",
+      "uid": "1",
+      "status": "1",
+      "created": "1421699406",
+      "changed": "1421699406",
+      "comment": "0",
+      "promote": "1",
+      "sticky": "0",
+      "tnid": "0",
+      "translate": "0",
+      "uuid": "3fd93b27-9ba6-407c-8c0e-e64e8b37644c",
+      "uri": "http://example.com/api/node/10"
+    }],
+    "retrieve": {
+      "vid": "3",
+      "uid": "1",
+      "title": "Test Article",
+      "log": "",
+      "status": "1",
+      "comment": "0",
+      "promote": "1",
+      "sticky": "0",
+      "vuuid": "230be461-c908-4e9f-a0db-5309e20f8110",
+      "nid": "3",
+      "type": "article",
+      "language": "und",
+      "created": "1421699406",
+      "changed": "1421699406",
+      "tnid": "0",
+      "translate": "0",
+      "uuid": "3fd93b27-9ba6-407c-8c0e-e64e8b37644c",
+      "revision_timestamp": "1421699406",
+      "revision_uid": "1",
+      "body": [ ],
+      "name": "admin",
+      "picture": "0",
+      "data": "b:0;",
+      "path": "http://example.com/content/test-article"
+    },
+    "create": {
+      "nid": "4",
+      "uri": "http://example.com/api/node/4"
+    },
+    "delete": [true]
+  }
+}
