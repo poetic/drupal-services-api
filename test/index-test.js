@@ -37,7 +37,7 @@ test('user - actions - login', function(t) {
     .reply(200, nockResponses.user.login);
 
   return drupal.login('user', 'password').then(function() {
-    t.equal(drupal._cookie, nockResponses.user.login.sessid);
+    t.equal(drupal._cookie, cookie());
     t.equal(drupal._csrfToken, nockResponses.user.login.token);
   });
 });
@@ -124,9 +124,7 @@ test('node - crud - create', function(t) {
   return drupal.create({
     type: 'article',
     title: 'title',
-    /* jshint ignore:start */
     field_phone_number: { und: [{ value: '1234567890' }] }
-    /* jshint ignore:end */
   }).then(function(response) {
     t.deepEqual(response, nockResponses.node.create);
   });
@@ -142,9 +140,7 @@ test('node - crud - update', function(t) {
 
   return drupal.update(5, {
     title: 'new title',
-    /* jshint ignore:start */
     field_phone_number: { und: [{ value: '999999999' }] }
-    /* jshint ignore:end */
   }).then(function(response) {
     t.deepEqual(response, nockResponses.node.update);
   });
@@ -184,4 +180,8 @@ function mockLogin(drupal) {
   drupal._csrfToken = nockResponses.user.login.token;
 
   return drupal;
+}
+
+function cookie() {
+  return nockResponses.user.login.session_name + '=' + nockResponses.user.login.sessid;
 }

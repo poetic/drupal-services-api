@@ -37,7 +37,7 @@ Drupal.prototype.login = function(username, password) {
     username: username,
     password: password
   }).then(function(user) {
-    this._cookie    = user.sessid;
+    this._cookie    = createCookieFromUser(user);
     this._csrfToken = user.token;
 
     return user;
@@ -106,5 +106,9 @@ Drupal.prototype.authenticatedRequest = function(method, url, body) {
     }
   });
 };
+
+function createCookieFromUser(user) {
+  return user.session_name + '=' + user.sessid;
+}
 
 module.exports = Drupal;
