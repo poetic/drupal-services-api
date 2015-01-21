@@ -15,6 +15,18 @@ test('Initialize with endpoint', function(t) {
   t.equal(drupal._endpoint, endpoint);
 });
 
+test('Drupal.prototype.isLoggedIn', function(t) {
+  t.plan(2);
+
+  var drupal = new Drupal('http://test.sample/api');
+
+  t.equal(drupal.isLoggedIn(), false, 'should be false');
+
+  mockLogin(drupal);
+
+  t.equal(drupal.isLoggedIn(), true, 'should be true');
+});
+
 test('user - actions - login', function(t) {
   t.plan(2);
 

@@ -17,6 +17,14 @@ Drupal.prototype.urlForNode = function(nid) {
   return this.urlForPath('node/' + nid + '.json');
 };
 
+Drupal.prototype.isLoggedIn = function() {
+  if (this._cookie && this._csrfToken) {
+    return true;
+  }
+
+  return false;
+};
+
 Drupal.prototype.login = function(username, password) {
   return request.post(this.urlForPath('user/login.json'), {
     username: username,
