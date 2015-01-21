@@ -42,6 +42,20 @@ test('user - actions - login', function(t) {
   });
 });
 
+test('user - actions - login - doesn\'t make request if already logged in', function(t) {
+  t.plan(1);
+
+  var drupal = loggedInDrupal('http://test.com/api');
+
+  var scope = nock('http://test.com')
+    .post('/api/user/login.json')
+    .reply(200, nockResponses.user.login);
+
+  return drupal.login('user', 'password').then(function() {
+    t.equal(scope.isDone(), false, 'request should not be made');
+  });
+});
+
 test('user - actions - logout', function(t) {
   t.plan(2);
 
@@ -160,6 +174,12 @@ function authedNock(url, drupalClient) {
 
 function loggedInDrupal(endpoint) {
   var drupal = new Drupal(endpoint);
+  mockLogin(drupal);
+
+  return drupal;
+}
+
+function mockLogin(drupal) {
   drupal._cookie = nockResponses.user.login.sessid;
   drupal._csrfToken = nockResponses.user.login.token;
 

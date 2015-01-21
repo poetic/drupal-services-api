@@ -2,6 +2,9 @@
 
 var request = require('./utils/request');
 var assign  = require('lodash-node/modern/objects/assign');
+/* jshint ignore:start */
+var Promise = require('bluebird');
+/* jshint ignore:end */
 
 function Drupal(endpoint) {
   this._endpoint  = endpoint;
@@ -26,6 +29,10 @@ Drupal.prototype.isLoggedIn = function() {
 };
 
 Drupal.prototype.login = function(username, password) {
+  if (this.isLoggedIn()) {
+    return Promise.resolve();
+  }
+
   return request.post(this.urlForPath('user/login.json'), {
     username: username,
     password: password

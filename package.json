@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/poetic/drupal-services-api",
   "dependencies": {
+    "bluebird": "^2.8.2",
     "lodash-node": "^2.4.1",
     "request-promise": "^0.3.3"
   },
