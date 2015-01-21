@@ -17,6 +17,8 @@ var client = new Drupal('http://drupal-site.com/api');
 
 client.login('username', 'password').then(function(user) { });
 
+client.isLoggedIn(); // => Boolean
+
 client.logout().then(function() { });
 
 client.index().then(function(nodes) { });
