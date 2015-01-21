@@ -1,6 +1,6 @@
 {
   "name": "drupal-services-api",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An Node.js client for interacting with Drupal 7 Services",
   "main": "index.js",
   "scripts": {
