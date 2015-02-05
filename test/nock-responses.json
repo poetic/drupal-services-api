@@ -100,6 +100,7 @@
   "taxonomyVocabulary": {
     "index": [
       {"vid":"3","name":"Pet","machine_name":"pet","description":"","hierarchy":"0","module":"taxonomy","weight":"0","uri":"http://camden-com.val/api/v1/taxonomy_vocabulary/3"}
-    ]
+    ],
+    "getTree": [{"tid":"8","vid":"3","name":"Cats","description":"","format":"full_html","weight":"0","uuid":"8febfdc4-b8df-457e-9703-e311e6104b96","depth":0,"parents":["0"]},{"tid":"1","vid":"3","name":"Dogs","description":"","format":"full_html","weight":"0","uuid":"012afaca-ac5f-4fb6-a7c8-7415cab45efb","depth":0,"parents":["0"]}]
   }
 }

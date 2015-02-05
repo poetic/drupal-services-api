@@ -179,6 +179,19 @@ test('taxonomyVocabulary - crud - index', function(t) {
   });
 });
 
+test.only('taxonomyVocabulary - crud - getTree', function(t) {
+  t.plan(1);
+  var drupal = new Drupal('http://test.com/api');
+
+  nock('http://test.com')
+    .post('/api/taxonomy_vocabulary/getTree.json')
+    .reply(200, nockResponses.taxonomyVocabulary.getTree);
+
+  return drupal.taxonomyVocabulary.getTree(3).then(function(response) {
+    t.deepEqual(response, nockResponses.taxonomyVocabulary.getTree);
+  });
+});
+
 function authedNock(url, drupalClient) {
   return nock(url, {
     reqheaders: {
