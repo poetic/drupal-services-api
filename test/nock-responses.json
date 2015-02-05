@@ -96,5 +96,10 @@
       "uri": "http://example.com/api/node/4"
     },
     "delete": [true]
+  },
+  "taxonomyVocabulary": {
+    "index": [
+      {"vid":"3","name":"Pet","machine_name":"pet","description":"","hierarchy":"0","module":"taxonomy","weight":"0","uri":"http://camden-com.val/api/v1/taxonomy_vocabulary/3"}
+    ]
   }
 }

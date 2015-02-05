@@ -2,14 +2,14 @@
 
 var request = require('./utils/request');
 var assign  = require('lodash-node/modern/objects/assign');
-/* jshint ignore:start */
-var Promise = require('bluebird');
-/* jshint ignore:end */
+var TaxonomyVocabulary = require('./lib/taxonomy-vocabulary');
+var Promise = require('bluebird'); // jshint ignore:line
 
 function Drupal(endpoint) {
-  this._endpoint  = endpoint;
-  this._cookie    = null;
-  this._csrfToken = null;
+  this._endpoint          = endpoint;
+  this._cookie            = null;
+  this._csrfToken         = null;
+  this.taxonomyVocabulary = new TaxonomyVocabulary(this);
 }
 
 Drupal.prototype.urlForPath = function(urlPath) {

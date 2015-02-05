@@ -159,6 +159,26 @@ test('node - crud - delete', function(t) {
   });
 });
 
+test('Initializes taxonomyVocabulary with client', function(t) {
+  t.plan(1);
+  var drupal = new Drupal('http://test.com/api');
+
+  t.deepEqual(drupal.taxonomyVocabulary.drupal, drupal);
+});
+
+test('taxonomyVocabulary - crud - index', function(t) {
+  t.plan(1);
+  var drupal = new Drupal('http://test.com/api');
+
+  nock('http://test.com')
+    .get('/api/taxonomy_vocabulary.json')
+    .reply(200, nockResponses.taxonomyVocabulary.index);
+
+  return drupal.taxonomyVocabulary.index().then(function(response) {
+    t.deepEqual(response, nockResponses.taxonomyVocabulary.index);
+  });
+});
+
 function authedNock(url, drupalClient) {
   return nock(url, {
     reqheaders: {
