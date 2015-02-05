@@ -41,5 +41,9 @@ client.update(2, {
 }).then(function(updatedNode) { });
 
 client.delete(2).then(function() { });
+
+client.taxonomyVocabulary.index().then(function(vocabulary) { });
+
+client.taxonomyVocabulary.getTree(vid).then(function(termsForVid) { });
 ```
 
