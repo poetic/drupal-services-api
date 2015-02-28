@@ -21,6 +21,8 @@ client.isLoggedIn(); // => Boolean
 
 client.logout().then(function() { });
 
+/* Nodes */
+
 client.index().then(function(nodes) { });
 
 client.index({limit: 10}).then(function(max10nodes) { });
@@ -42,8 +44,19 @@ client.update(2, {
 
 client.delete(2).then(function() { });
 
+/* Taxonomy */
+
 client.taxonomyVocabulary.index().then(function(vocabulary) { });
 
 client.taxonomyVocabulary.getTree(vid).then(function(termsForVid) { });
+
+/* File */
+
+client.file.index().then(function(files) {  });
+
+client.file.index({limit: 10}).then(function(max10files) { });
+
+client.file.index(null, {filename: 'something'}).then(function(filesWhereOrigNameIsSomething) { });
+
 ```
 

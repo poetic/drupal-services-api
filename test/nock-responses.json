@@ -102,5 +102,31 @@
       {"vid":"3","name":"Pet","machine_name":"pet","description":"","hierarchy":"0","module":"taxonomy","weight":"0","uri":"http://camden-com.val/api/v1/taxonomy_vocabulary/3"}
     ],
     "getTree": [{"tid":"8","vid":"3","name":"Cats","description":"","format":"full_html","weight":"0","uuid":"8febfdc4-b8df-457e-9703-e311e6104b96","depth":0,"parents":["0"]},{"tid":"1","vid":"3","name":"Dogs","description":"","format":"full_html","weight":"0","uuid":"012afaca-ac5f-4fb6-a7c8-7415cab45efb","depth":0,"parents":["0"]}]
+  },
+  "file": {
+    "index": [{
+      "fid": "2298",
+      "uid": "13",
+      "filename": "my-special-file.jpg",
+      "uri": "http://example.com/api/v1/file/2298",
+      "filemime": "image/jpeg",
+      "filesize": "1947329",
+      "status": "1",
+      "timestamp": "1424397098",
+      "uuid": "1cb0dc93-fc72-4f0e-92d2-70b284d44894",
+      "origname": "original_file_name.jpg"
+    },
+    {
+      "fid": "2297",
+      "uid": "13",
+      "filename": "some-file-name.jpg",
+      "uri": "http://example.com/api/v1/file/2297",
+      "filemime": "image/jpeg",
+      "filesize": "1742580",
+      "status": "1",
+      "timestamp": "1424397051",
+      "uuid": "107d7b60-644d-452f-a5c5-a37670bb905a",
+      "origname": "orig_file_name.jpg"
+    }]
   }
 }

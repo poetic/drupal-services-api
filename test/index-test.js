@@ -179,7 +179,7 @@ test('taxonomyVocabulary - crud - index', function(t) {
   });
 });
 
-test.only('taxonomyVocabulary - crud - getTree', function(t) {
+test('taxonomyVocabulary - crud - getTree', function(t) {
   t.plan(1);
   var drupal = new Drupal('http://test.com/api');
 
@@ -189,6 +189,21 @@ test.only('taxonomyVocabulary - crud - getTree', function(t) {
 
   return drupal.taxonomyVocabulary.getTree(3).then(function(response) {
     t.deepEqual(response, nockResponses.taxonomyVocabulary.getTree);
+  });
+});
+
+test('file - crud - index', function(t) {
+  t.plan(1);
+  var drupal = loggedInDrupal('http://test.com/api');
+
+  authedNock('http://test.com', drupal)
+    .get('/api/file.json')
+    .reply(200, nockResponses.file.index);
+
+  return drupal.file.index().then(function(response) {
+    t.deepEqual(response, nockResponses.file.index);
+  }, function(e) {
+    t.error(e, 'rejected promise');
   });
 });
 

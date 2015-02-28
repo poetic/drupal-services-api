@@ -3,6 +3,7 @@
 var request = require('./utils/request');
 var assign  = require('lodash-node/modern/objects/assign');
 var TaxonomyVocabulary = require('./lib/taxonomy-vocabulary');
+var DrupalFile = require('./lib/file');
 var Promise = require('bluebird'); // jshint ignore:line
 
 function Drupal(endpoint) {
@@ -10,6 +11,7 @@ function Drupal(endpoint) {
   this._cookie            = null;
   this._csrfToken         = null;
   this.taxonomyVocabulary = new TaxonomyVocabulary(this);
+  this.file               = new DrupalFile(this);
 }
 
 Drupal.prototype.urlForPath = function(urlPath) {
@@ -28,6 +30,9 @@ Drupal.prototype.isLoggedIn = function() {
   return false;
 };
 
+/*
+ * Login/Logout
+ */
 Drupal.prototype.login = function(username, password) {
   if (this.isLoggedIn()) {
     return Promise.resolve();
@@ -54,6 +59,9 @@ Drupal.prototype.logout = function() {
   }.bind(this));
 };
 
+/*
+ * Node methods
+ */
 Drupal.prototype.index = function(options, params) {
   // This merges options like limit: 1 and params like title: 'whatever'.
   var query = assign({}, options || {}, {
@@ -83,6 +91,13 @@ Drupal.prototype.delete = function(nid) {
   return this.authenticatedDelete(this.urlForNode(nid));
 };
 
+/*
+ * Auth methods
+ */
+Drupal.prototype.authenticatedGet = function(url, qa) {
+  return this.authenticatedRequest('GET', url, null, qa);
+};
+
 Drupal.prototype.authenticatedPost = function(url, body) {
   return this.authenticatedRequest('POST', url, body);
 };
@@ -95,11 +110,12 @@ Drupal.prototype.authenticatedPut = function(url, body) {
   return this.authenticatedRequest('PUT', url, body);
 };
 
-Drupal.prototype.authenticatedRequest = function(method, url, body) {
+Drupal.prototype.authenticatedRequest = function(method, url, body, qa) {
   return request({
     method:  method,
     url:     url,
     body:    body,
+    qa:      qa,
     headers: {
       'Cookie':        this._cookie,
       'X-CSRF-Token':  this._csrfToken
@@ -107,6 +123,9 @@ Drupal.prototype.authenticatedRequest = function(method, url, body) {
   });
 };
 
+/*
+ * private
+ */
 function createCookieFromUser(user) {
   return user.session_name + '=' + user.sessid;
 }
