@@ -58,5 +58,10 @@ client.file.index({limit: 10}).then(function(max10files) { });
 
 client.file.index(null, {filename: 'something'}).then(function(filesWhereOrigNameIsSomething) { });
 
+/* User */
+
+client.user.index().then(function(users) {  });
+
+client.user.retrieve(1).then(function(userWithIdOf1) {  });
 ```
 
