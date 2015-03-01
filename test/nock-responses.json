@@ -26,7 +26,50 @@
         }
       }
     },
-    "logout": [true]
+    "logout": [true],
+    "index": [
+      {
+        "uid": "1",
+        "name": "test_user",
+        "mail": "test.user@test.com",
+        "theme": "",
+        "signature": "",
+        "signature_format": "full_html",
+        "created": "1423878767",
+        "access": "0",
+        "login": "0",
+        "status": "1",
+        "timezone": "UTC",
+        "language": "",
+        "picture": "0",
+        "init": "test.user@test.com",
+        "data": "a:5:{s:16:\"ckeditor_default\";s:1:\"t\";s:20:\"ckeditor_show_toggle\";s:1:\"t\";s:14:\"ckeditor_width\";s:4:\"100%\";s:13:\"ckeditor_lang\";s:2:\"en\";s:18:\"ckeditor_auto_lang\";s:1:\"t\";}",
+        "uuid": "091e06d7-324e-4afc-8bc8-cbc34496560e",
+        "uri": "http://test.com/api/user/1"
+      }
+    ],
+    "retrieve": {
+      "uid": "1",
+      "name": "admin",
+      "mail": "webmaster@test.com",
+      "theme": "",
+      "signature": "",
+      "signature_format": null,
+      "created": "1423855222",
+      "access": "1425232806",
+      "login": "1425152074",
+      "status": "1",
+      "timezone": "UTC",
+      "language": "",
+      "picture": "0",
+      "init": "webmaster@test.com",
+      "data": false,
+      "uuid": "17fb1dd6-0ea0-412f-b2b3-bdfe556daa7b",
+      "roles": {
+        "2": "authenticated user",
+        "3": "administrator"
+      }
+    }
   },
   "node": {
     "index": [{

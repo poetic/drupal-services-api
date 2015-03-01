@@ -4,6 +4,7 @@ var request = require('./utils/request');
 var assign  = require('lodash-node/modern/objects/assign');
 var TaxonomyVocabulary = require('./lib/taxonomy-vocabulary');
 var DrupalFile = require('./lib/file');
+var User    = require('./lib/user');
 var Promise = require('bluebird'); // jshint ignore:line
 
 function Drupal(endpoint) {
@@ -12,6 +13,7 @@ function Drupal(endpoint) {
   this._csrfToken         = null;
   this.taxonomyVocabulary = new TaxonomyVocabulary(this);
   this.file               = new DrupalFile(this);
+  this.user               = new User(this);
 }
 
 Drupal.prototype.urlForPath = function(urlPath) {

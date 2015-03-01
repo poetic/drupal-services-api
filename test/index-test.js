@@ -202,9 +202,7 @@ test('file - crud - index', function(t) {
 
   return drupal.file.index().then(function(response) {
     t.deepEqual(response, nockResponses.file.index);
-  }, function(e) {
-    t.error(e, 'rejected promise');
-  });
+  }, t.error);
 });
 
 test('file - crud - retrieve', function(t) {
@@ -218,6 +216,32 @@ test('file - crud - retrieve', function(t) {
   return drupal.file.retrieve(3).then(function(response) {
     t.deepEqual(response, nockResponses.file.retrieve);
   });
+});
+
+test('user - index', function(t) {
+  t.plan(1);
+  var drupal = loggedInDrupal('http://test.com/api');
+
+  authedNock('http://test.com', drupal)
+    .get('/api/user.json')
+    .reply(200, nockResponses.user.index);
+
+  return drupal.user.index().then(function(response) {
+    t.deepEqual(response, nockResponses.user.index);
+  }, t.error);
+});
+
+test('user - retrieve', function(t) {
+  t.plan(1);
+  var drupal = loggedInDrupal('http://test.com/api');
+
+  authedNock('http://test.com', drupal)
+    .get('/api/user/1.json')
+    .reply(200, nockResponses.user.retrieve);
+
+  return drupal.user.retrieve(1).then(function(response) {
+    t.deepEqual(response, nockResponses.user.retrieve);
+  }, t.error);
 });
 
 function authedNock(url, drupalClient) {
