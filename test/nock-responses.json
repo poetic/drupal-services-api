@@ -127,6 +127,22 @@
       "timestamp": "1424397051",
       "uuid": "107d7b60-644d-452f-a5c5-a37670bb905a",
       "origname": "orig_file_name.jpg"
-    }]
+    }],
+    "retrieve": {
+      "fid": "10",
+      "uid": "1",
+      "filename": "file-name.jpg",
+      "uri": "public://example/images/file-name.jpg",
+      "filemime": "image/jpeg",
+      "filesize": "483789",
+      "status": "1",
+      "timestamp": "1424985399",
+      "origname": "test-example.jpg",
+      "uuid": "c0f24efd-4184-4780-965c-c77d0422d05f",
+      "uri_full": "http://example.com/api/file-image-name.jpg",
+      "target_uri": "api/file-image-name.jpg",
+      "file": "/9j/4AAQSkZJRgABAQAAAQABAAD/4...",
+      "image_styles": [ ]
+    }
   }
 }

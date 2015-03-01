@@ -207,6 +207,19 @@ test('file - crud - index', function(t) {
   });
 });
 
+test('file - crud - retrieve', function(t) {
+  t.plan(1);
+  var drupal = loggedInDrupal('http://test.com/api');
+
+  authedNock('http://test.com', drupal)
+    .get('/api/file/3.json')
+    .reply(200, nockResponses.file.retrieve);
+
+  return drupal.file.retrieve(3).then(function(response) {
+    t.deepEqual(response, nockResponses.file.retrieve);
+  });
+});
+
 function authedNock(url, drupalClient) {
   return nock(url, {
     reqheaders: {
