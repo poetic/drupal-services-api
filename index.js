@@ -125,6 +125,14 @@ Drupal.prototype.authenticatedRequest = function(method, url, body, qa) {
   });
 };
 
+
+/*
+ * Get other methods
+ */
+Drupal.prototype.post = function (url, params) {
+  return request.post(url, params);
+}
+
 /*
  * private
  */
