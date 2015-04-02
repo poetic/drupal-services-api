@@ -4,4 +4,4 @@ node_js:
   - "0.10.33"
 before_install:
   - "npm install -g npm@^2"
-script: npm run test-ci
+script: npm test
