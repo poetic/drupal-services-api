@@ -72,6 +72,22 @@ test('user - actions - logout', function(t) {
   });
 });
 
+test('user - crud - create', function(t) {
+  t.plan(1);
+  var drupal = loggedInDrupal('http://test.com/api');
+
+  authedNock('http://test.com', drupal)
+    .post('/api/user/register.json')
+    .reply(200, nockResponses.user.login);
+
+  return drupal.user.create({
+    mail: 'tester@test.com',
+    pass: 'test123'
+  }).then(function(response) {
+    t.deepEqual(response, nockResponses.user.login);
+  });
+});
+
 test('node - crud - index', function(t) {
   t.plan(1);
 

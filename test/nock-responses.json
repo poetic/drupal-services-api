@@ -1,5 +1,9 @@
 {
   "user": {
+    "register": {
+      "uid": "8",
+      "uri": "http://test.com/api/user/8"
+    },
     "login": {
       "sessid": "VF1HOx_fJ7KSQGk5DjdhFbtkYKLPpg8Xt9KS5dBRTGk",
       "session_name": "SESS8bf5276dc5210b1f064246f41e6c9872",
