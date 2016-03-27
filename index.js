@@ -96,8 +96,8 @@ Drupal.prototype.delete = function(nid) {
 /*
  * Auth methods
  */
-Drupal.prototype.authenticatedGet = function(url, qa) {
-  return this.authenticatedRequest('GET', url, null, qa);
+Drupal.prototype.authenticatedGet = function(url, qs) {
+  return this.authenticatedRequest('GET', url, null, qs);
 };
 
 Drupal.prototype.authenticatedPost = function(url, body) {
@@ -112,12 +112,12 @@ Drupal.prototype.authenticatedPut = function(url, body) {
   return this.authenticatedRequest('PUT', url, body);
 };
 
-Drupal.prototype.authenticatedRequest = function(method, url, body, qa) {
+Drupal.prototype.authenticatedRequest = function(method, url, body, qs) {
   return request({
     method:  method,
     url:     url,
     body:    body,
-    qa:      qa,
+    qs:      qs,
     headers: {
       'Cookie':        this._cookie,
       'X-CSRF-Token':  this._csrfToken
